@@ -3,6 +3,8 @@
     <x-forms.textarea x-show="$wire.is_multiline === true" x-cloak id="value" label="Value" required />
     <x-forms.input x-show="$wire.is_multiline === false" x-cloak placeholder="production" id="value"
         x-bind:label="$wire.is_multiline === false && 'Value'" required />
+    <x-forms.input id="comment" label="Comment (Optional)"
+        helper="Add a note to document what this environment variable is used for." maxlength="256" />
 
     @if (!$shared)
         <x-forms.checkbox id="is_buildtime"
